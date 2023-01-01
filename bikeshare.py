@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 
 CITY_DATA = {'chicago': 'chicago.csv',
-             'new york city': 'new_york_city.csv',
-             'washington': 'washington.csv'}
+            'new york city': 'new_york_city.csv',
+            'washington': 'washington.csv'}
 
 def get_filters():
     """Check user's inputs for a given inputs
@@ -72,7 +72,7 @@ def time_stats(df):
     months = ['january', 'february', 'march', 'april', 'may', 'june']
     month = df['month'].mode()[0]
     results_list = {'The Most Common': ['Most common Month is:', 'Most common Day is:', 'Most common Hour is :'],
-             'Results': [ months[month-1].title() , df['day_of_week'].mode()[0], df['Start Hour'].mode()[0] ]}
+            'Results': [ months[month-1].title() , df['day_of_week'].mode()[0], df['Start Hour'].mode()[0] ]}
     index_labels = ['R1' , 'R2', 'R3']
     df_list = pd.DataFrame(results_list, index= index_labels)
     print(df_list)
@@ -90,7 +90,7 @@ def station_stats(df):
     # Display most commonly used Start and End station
     popular_combo_stations = df['Start Station'] +" -> "+ df['End Station']
     results_list = {'The Most Popular': ['Most common Start station is:', 'Most common End station is:', 'Popular Start & End station is:'],
-             'Results': [ df['Start Station'].mode()[0] , df['End Station'].mode()[0], popular_combo_stations.head(1)]}
+            'Results': [ df['Start Station'].mode()[0] , df['End Station'].mode()[0], popular_combo_stations.head(1)]}
     index_labels = ['R1' , 'R2', 'R3']
     df_list = pd.DataFrame(results_list, index= index_labels)
     print(df_list)
